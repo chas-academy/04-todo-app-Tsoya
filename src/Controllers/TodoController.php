@@ -40,6 +40,17 @@ class TodoController extends Controller {
     public function delete($urlParams)
     {
       // TODO: Implement me!
+      
+      // echo getUri();
+      
+      $link = explode("/", getUri());
+      // echo $link[1];
+      TodoItem::deleteTodo($link[1]);
+
+      
+        $this->redirect('/');
+
+      
     }
 
     /**
