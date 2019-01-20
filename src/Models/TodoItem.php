@@ -18,7 +18,8 @@ class TodoItem extends Model
         // $query = "INSERT INTO `todos` (`title`, `created`, `completed`)
         // VALUES ($title, $date, ´false´)";
 
-
+        // $query = "INSERT INTO `todos` (`title`, `created`, `completed`)
+        // VALUES ($title, $date, ´false´)";
 
         $query = "INSERT INTO todos (title, created, completed)
         VALUES ('$title', now(), 'false')";
@@ -26,21 +27,24 @@ class TodoItem extends Model
         self::$db->query($query);
         self::$db->execute();
 
-
-        // $query = "INSERT INTO todos (title, created) VALUES ('$title, now()')"
-
-        // self::$db->query($query);
-
-        // 
-
     }
 
 
-    // // public static function updateTodo($todoId, $title, $completed = null)
-    // // {
-    // //     // TODO: Implement me!
-    // //     // Update a specific todo
-    // // }
+    public static function updateTodo($todoId, $title, $completed = null)
+    {
+        // TODO: Implement me!
+        // Update a specific todo
+
+        $query = "UPDATE todos SET title = '$title', completed = '$completed' WHERE id = '$todoId'";
+
+        self::$db->query($query);
+        self::$db->execute();
+
+        // $result = self::$db->execute();
+        // return $result;
+
+
+    }
 
     public static function deleteTodo($todoId)
     {
