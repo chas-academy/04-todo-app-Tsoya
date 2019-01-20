@@ -11,16 +11,6 @@ class TodoItem extends Model
         // TODO: Implement me!
         // Create a new todo
 
-        // titlen storas i query nu, 
-
-        $date = date("Y/m/d");
-
-        // $query = "INSERT INTO `todos` (`title`, `created`, `completed`)
-        // VALUES ($title, $date, ´false´)";
-
-        // $query = "INSERT INTO `todos` (`title`, `created`, `completed`)
-        // VALUES ($title, $date, ´false´)";
-
         $query = "INSERT INTO todos (title, created, completed)
         VALUES ('$title', now(), 'false')";
 
@@ -40,8 +30,6 @@ class TodoItem extends Model
         self::$db->query($query);
         self::$db->execute();
 
-        // $result = self::$db->execute();
-        // return $result;
 
 
     }

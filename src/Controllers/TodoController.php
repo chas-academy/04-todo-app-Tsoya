@@ -20,9 +20,6 @@ class TodoController extends Controller {
         $body = filter_body();
         $result = TodoItem::createTodo($body['title']);
 
-        // if ($result) {
-            
-        // }
         $this->redirect('/');
     }
 
@@ -58,10 +55,10 @@ class TodoController extends Controller {
     {
       // TODO: Implement me!
       
-      // echo getUri();
+
       
       $link = explode("/", getUri());
-      // echo $link[1];
+
       TodoItem::deleteTodo($link[1]);
 
       
