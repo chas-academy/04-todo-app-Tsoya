@@ -12,15 +12,28 @@ class TodoController extends Controller {
         return $this->view('index', ['todos' => $todos]);
     }
 
+
+
+
     public function add()
     {
         $body = filter_body();
         $result = TodoItem::createTodo($body['title']);
 
         if ($result) {
-          $this->redirect('/');
+            
         }
+        $this->redirect('/');
+        // TodoItem::createTodo();
+
+        // if ($result) {
+        //   $this->redirect('/');
+        // }
+
+        // $this->redirect('/');
     }
+
+
 
     public function update($urlParams)
     {

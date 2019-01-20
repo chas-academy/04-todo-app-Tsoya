@@ -19,3 +19,5 @@ VALUES
   ('create a todo', now(), 'false'),
   ('do laundry', now(), 'false'),
   ('finish todo app', now(), 'false');
+
+  
